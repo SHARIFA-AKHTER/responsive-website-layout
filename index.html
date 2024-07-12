@@ -4,16 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Responsive Mobile/Tablet Layout</title>
+
+    <style>
+        .container{
+            display: grid;
+            grid-template-columns: repeat(1,1fr);
+           
+        }
+        .image-container{
+           display: flex;
+           gap: 20px;
+         
+        }
+        .image-container img{
+            width: 40%;
+        }
+        .image-container div{
+          width: 40%;
+        }
+       
+        @media screen and (max-width:576px){
+            .image-container{
+                flex-direction: column-reverse;
+                grid-template-columns: repeat(1,1fr);
+                
+            }
+            #second-pic{
+                height: 400px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Responsive Website</h1>
-        <div>
-            <img src="./images/baby-1.jpg" alt="">
-        </div>
-        <div>
-            <img src="./images/baby-2.jpg" alt="">
-        </div>
-    </header>
+     <div class="container">
+        <div class="image-container">
+                <img id="second-pic" src="./images/baby-1.jpg" alt="">
+                <img  src="./images/baby-2.jpg" alt="">
+            </div>
+            
+     </div>
 </body>
 </html>
